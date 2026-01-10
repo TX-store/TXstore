@@ -78,10 +78,21 @@ const products = [
         reviews: 390,
         description: 'إضافة 50 عضو للسيرفر بسهولة'
     },
+    {
+        id: 108,
+        name: 'نسخ سيرفرات',
+        price: 1,
+        priceType: 'ريال / 35k كردت',
+        category: 'servers',
+        image: 'https://cdn.discordapp.com/attachments/1459228068043428037/1459632808589791545/1d0f7aefea527065.jpg?ex=6963fc7c&is=6962aafc&hm=b44bd7fad555478bd2d9f39d5c5813cae13367a3a9dde7b7a1ab0933502fe396&',
+        rating: 4.7,
+        reviews: 290,
+        description: 'نسخ احترافية من السيرفرات الجاهزة'
+    },
 
     // خدمات شخصية
     {
-        id: 108,
+        id: 109,
         name: 'يوزرات ديسكورد ',
         price: 3,
         priceType: 'ريال / 345k كردت',
@@ -92,7 +103,7 @@ const products = [
         description: 'يوزرات ديسكورد قصيرة 3 أحرف فقط'
     },
     {
-        id: 109,
+        id: 110,
         name: 'تصاميم لوجو وبنر',
         price: 9,
         priceType: 'ريال / 6.5M كردت',
@@ -103,7 +114,7 @@ const products = [
         description: 'تصاميم لوجو وبنر احترافية عالية الجودة'
     },
     {
-        id: 110,
+        id: 111,
         name: 'effect 6$',
         price: 9,
         priceType: 'ريال / 3M كردت',
@@ -114,7 +125,7 @@ const products = [
         description: 'افكت احترافي بقيمة 6 دولار'
     },
     {
-        id: 111,
+        id: 112,
         name: 'دعم TikTok - مشاهدات',
         price: 2,
         priceType: 'ريال / 30k كردت (1000 مشاهدة)',
@@ -125,7 +136,7 @@ const products = [
         description: 'كل 1000 مشاهدة بسعر مخفض'
     },
     {
-        id: 112,
+        id: 113,
         name: 'دعم TikTok - لايكات',
         price: 2,
         priceType: 'ريال / 30k كردت (25 لايك)',
@@ -136,7 +147,7 @@ const products = [
         description: 'كل 25 لايك بسعر موفر'
     },
     {
-        id: 113,
+        id: 114,
         name: 'دعم TikTok - إكسبلورر',
         price: 2,
         priceType: 'ريال / 30k كردت (100 إكسبلورر)',
@@ -147,7 +158,7 @@ const products = [
         description: 'كل 100 إكسبلورر بسعر محدود'
     },
     {
-        id: 114,
+        id: 115,
         name: 'بكج العالمي TikTok',
         price: 7,
         priceType: 'ريال',
@@ -160,7 +171,7 @@ const products = [
 
     // خدمات البرمجيات
     {
-        id: 115,
+        id: 116,
         name: 'Ticket System',
         price: 150,
         priceType: 'k كردت',
@@ -171,7 +182,7 @@ const products = [
         description: 'نظام تكاتة متقدم وموثوق موجود كثير'
     },
     {
-        id: 116,
+        id: 117,
         name: 'All-in-One Bot',
         price: 300,
         priceType: 'k كردت',
@@ -182,7 +193,7 @@ const products = [
         description: 'بوت شامل يحتوي على تكت وسيستم وغيف اوي وبرودكاست وأكثر'
     },
     {
-        id: 117,
+        id: 118,
         name: 'Broadcast Bot',
         price: 150,
         priceType: 'k كردت',
@@ -193,7 +204,7 @@ const products = [
         description: 'بوت برودكاست احترافي لإرسال الرسائل'
     },
     {
-        id: 118,
+        id: 119,
         name: 'Auto Line Bot',
         price: 150,
         priceType: 'k كردت',
@@ -204,7 +215,7 @@ const products = [
         description: 'بوت خط تلقائي ذكي وفعال'
     },
     {
-        id: 119,
+        id: 120,
         name: 'Giveaway Bot',
         price: 100,
         priceType: 'k كردت',
@@ -215,7 +226,7 @@ const products = [
         description: 'بوت غيفاوي قوي مع ميزات متقدمة'
     },
     {
-        id: 120,
+        id: 121,
         name: 'Games Bot',
         price: 100,
         priceType: 'k كردت',
