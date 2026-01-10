@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>لوحة التقييمات - TXstore</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .reviews-table { width:100%; border-collapse: collapse; }
+        .reviews-table th, .reviews-table td { padding:8px 12px; border:1px solid #eee; text-align:right }
+        .admin-wrap { max-width:1200px; margin:24px auto }
+        .back-btn { position: absolute; left: 16px; top: 12px; z-index: 300; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="back-btn cta-btn">العودة الى المتجر</a>
+            <div class="navbar-brand"><h1>TXstore</h1></div>
+        </div>
+    </nav>
+
+    <main class="admin-wrap">
+        <h2>الوصول إلى التقييمات</h2>
+        <div id="loginBox">
+            <p>أدخل كلمة المرور لعرض جميع التقييمات المسجلة.</p>
+            <input id="adminPass" type="password" placeholder="كلمة المرور" style="padding:8px; width:300px; border-radius:6px; border:1px solid #ddd">
+            <button id="loginBtn" class="cta-btn">دخول</button>
+        </div>
+
+        <div id="reviewsArea" style="display:none; margin-top:20px">
+            <h3>التقييمات المسجلة</h3>
+            <table class="reviews-table" id="reviewsTable">
+                <thead>
+                    <tr><th>التاريخ</th><th>التقييم</th><th>المجموع</th><th>تفاصيل الطلب</th><th>ملاحظات</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <button id="exportBtn" class="cta-btn" style="margin-top:12px">تصدير JSON</button>
+            <button id="clearBtn" class="continue-btn" style="margin-top:12px">مسح الكل</button>
+        </div>
+    </main>
+
+    <script>
+        const PASSWORD = 'TXbest'; // كلمة المرور المحدثة
+        const loginBtn = document.getElementById('loginBtn');
+        const reviewsArea = document.getElementById('reviewsArea');
+        const loginBox = document.getElementById('loginBox');
+        const adminPass = document.getElementById('adminPass');
+        const reviewsTableBody = document.querySelector('#reviewsTable tbody');
+
+        loginBtn.addEventListener('click', () => {
+            if (adminPass.value === PASSWORD) {
+                loginBox.style.display = 'none';
+                reviewsArea.style.display = 'block';
+                loadReviews();
+            } else {
+                alert('كلمة المرور غير صحيحة');
+            }
+        });
+
+        function loadReviews() {
+            const reviews = JSON.parse(localStorage.getItem('reviews') || '[]');
+            reviewsTableBody.innerHTML = '';
+            if (reviews.length === 0) {
+                reviewsTableBody.innerHTML = '<tr><td colspan="5">لا توجد تقييمات بعد.</td></tr>';
+                return;
+            }
+            reviews.slice().reverse().forEach(r => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `<td>${new Date(r.createdAt).toLocaleString()}</td><td>${r.rating}</td><td>${r.total || ''}</td><td style="max-width:300px; white-space:pre-wrap">${r.orderSummary}</td><td style="max-width:250px; white-space:pre-wrap">${r.comment}</td>`;
+                reviewsTableBody.appendChild(tr);
+            });
+        }
+
+        document.getElementById('exportBtn').addEventListener('click', () => {
+            const data = localStorage.getItem('reviews') || '[]';
+            const blob = new Blob([data], {type:'application/json'});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'txstore-reviews.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+
+        document.getElementById('clearBtn').addEventListener('click', () => {
+            if (!confirm('هل أنت متأكد من مسح جميع التقييمات؟')) return;
+            localStorage.removeItem('reviews');
+            loadReviews();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,672 @@
+// بيانات المنتجات
+const products = [
+    // خدمات الديسكورد
+    {
+        id: 101,
+        name: 'Nitro شهر (رابط)',
+        price: 200000,
+        priceType: 'كردت',
+        category: 'discord',
+        image: 'https://cdn.salla.sa/rKpdp/a5a0d542-f182-472b-a257-0a9c6aa2a983-500x500-3OTXyrL4b0JVNqSknTUL7Nfbh3fwpIkOFfZJM7Wr.jpg',
+        rating: 4.9,
+        reviews: 520,
+        description: 'اشتراك Nitro لمدة شهر برابط تفعيل مباشر'
+    },
+    {
+        id: 102,
+        name: 'Nitro شهر',
+        price: 24,
+        priceType: 'ريال',
+        category: 'discord',
+        image: 'https://cdn.salla.sa/rKpdp/a5a0d542-f182-472b-a257-0a9c6aa2a983-500x500-3OTXyrL4b0JVNqSknTUL7Nfbh3fwpIkOFfZJM7Wr.jpg',
+        rating: 4.8,
+        reviews: 380,
+        description: 'اشتراك Discord Nitro لمدة شهر كامل'
+    },
+    {
+        id: 103,
+        name: 'Nitro سنة',
+        price: 154,
+        priceType: 'ريال',
+        category: 'discord',
+        image: 'https://cdn.salla.sa/rKpdp/a5a0d542-f182-472b-a257-0a9c6aa2a983-500x500-3OTXyrL4b0JVNqSknTUL7Nfbh3fwpIkOFfZJM7Wr.jpg',
+        rating: 4.9,
+        reviews: 640,
+        description: 'اشتراك Discord Nitro لمدة سنة كاملة'
+    },
+    {
+        id: 104,
+        name: 'كردت مليون',
+        price: 2.5,
+        priceType: 'ريال',
+        category: 'discord',
+        image: 'https://avatars.githubusercontent.com/u/67172145?s=200&v=4',
+        rating: 4.7,
+        reviews: 450,
+        description: 'مليون كردت ديسكورد بسعر منخفض'
+    },
+
+    // خدمات السيرفرات
+    {
+        id: 105,
+        name: '14 بوست',
+        price: 24,
+        priceType: 'ريال',
+        category: 'servers',
+        image: 'https://postcdn.haraj.com.sa/userfiles30/2025-04-11/1080x1080_78D3B8DD-47A1-4874-80F4-E86ABEB2BE97.jpg-700.webp' ,
+        reviews: 310,
+        description: '14 بوست للسيرفر مع جودة عالية'
+    },
+    {
+        id: 106,
+        name: 'تعديل السيرفر',
+        price: 7,
+        priceType: 'ريال / 3M كردت',
+        category: 'servers',
+        image: 'https://cdn.discordapp.com/attachments/1459288615954944191/1459464730950373408/5_4_10001250_.jpg?ex=69635ff3&is=69620e73&hm=50b57daf53dd92060b4c8d1b8c9622499c0fdad9507b4028a6ef075ddea7aeb2&',
+        reviews: 280,
+        description: 'خدمة تعديل السيرفر كاملة احترافية'
+    },
+    {
+        id: 107,
+        name: 'أعضاء (50 عضو)',
+        price: 2,
+        priceType: 'ريال / 350k كردت',
+        category: 'servers',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459512802241810554/5447b18f3ff226459b66481a3a684808.jpg?ex=69638cb8&is=69623b38&hm=d1e63360bbc4472d9c11fee47bd6d1ddc1dcfc5a53d0357030d4f3786a78677c&',
+        rating: 4.6,
+        reviews: 390,
+        description: 'إضافة 50 عضو للسيرفر بسهولة'
+    },
+
+    // خدمات شخصية
+    {
+        id: 108,
+        name: 'يوزرات ديسكورد ',
+        price: 3,
+        priceType: 'ريال / 345k كردت',
+        category: 'personal',
+        image: 'https://cdn.discordapp.com/attachments/1390287100846280815/1459587470374080666/8d5e2f4f6276f752.jpg?ex=6963d242&is=696280c2&hm=f2f4f394b4d95e1a4abe7c03ba2d033d8a423fa79632bec97a339d42f9bcfd75&',
+        rating: 4.8,
+        reviews: 520,
+        description: 'يوزرات ديسكورد قصيرة 3 أحرف فقط'
+    },
+    {
+        id: 109,
+        name: 'تصاميم لوجو وبنر',
+        price: 9,
+        priceType: 'ريال / 6.5M كردت',
+        category: 'personal',
+        image: 'https://cdn.discordapp.com/attachments/1390287100846280815/1459587471288570057/b15d5ef6700a1c78.jpg?ex=6963d242&is=696280c2&hm=7db2f2ca812152bbd1703cfc90c5a27aae4f89733a824aed34629157c7b99b7c&',
+        rating: 4.9,
+        reviews: 610,
+        description: 'تصاميم لوجو وبنر احترافية عالية الجودة'
+    },
+    {
+        id: 110,
+        name: 'effect 6$',
+        price: 9,
+        priceType: 'ريال / 3M كردت',
+        category: 'personal',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSM8R0rxTkYoe16OUZJfWqnu_PSAtYdwnPXg&s',
+        rating: 4.7,
+        reviews: 340,
+        description: 'افكت احترافي بقيمة 6 دولار'
+    },
+    {
+        id: 111,
+        name: 'دعم TikTok - مشاهدات',
+        price: 2,
+        priceType: 'ريال / 30k كردت (1000 مشاهدة)',
+        category: 'personal',
+        image: 'https://cdn.salla.sa/rKpdp/98c3d139-55de-4743-9cbf-418ee7704c95-500x500-C0CsJgVFR7zZth4lritXblvAhYSI0ZFctuht69kP.jpg',
+        rating: 4.8,
+        reviews: 480,
+        description: 'كل 1000 مشاهدة بسعر مخفض'
+    },
+    {
+        id: 112,
+        name: 'دعم TikTok - لايكات',
+        price: 2,
+        priceType: 'ريال / 30k كردت (25 لايك)',
+        category: 'personal',
+        image: 'https://cdn.salla.sa/rKpdp/90e71cd0-6ee3-4fbd-90c6-793265d46c6c-500x500-XQQ3gZYI2NXh04CsGo3wXtiResp18wrWhLsSP7Wp.jpg',
+        rating: 4.8,
+        reviews: 420,
+        description: 'كل 25 لايك بسعر موفر'
+    },
+    {
+        id: 113,
+        name: 'دعم TikTok - إكسبلورر',
+        price: 2,
+        priceType: 'ريال / 30k كردت (100 إكسبلورر)',
+        category: 'personal',
+        image: 'https://img.icons8.com/fluency/256/tiktok.png',
+        rating: 4.7,
+        reviews: 360,
+        description: 'كل 100 إكسبلورر بسعر محدود'
+    },
+    {
+        id: 114,
+        name: 'بكج العالمي TikTok',
+        price: 7,
+        priceType: 'ريال',
+        category: 'personal',
+        image: 'https://img.icons8.com/fluency/256/tiktok.png',
+        rating: 4.9,
+        reviews: 580,
+        description: '5000 مشاهدة + 65 لايك + 100 إكسبلورر - أفضل عرض'
+    },
+
+    // خدمات البرمجيات
+    {
+        id: 115,
+        name: 'Ticket System',
+        price: 150,
+        priceType: 'k كردت',
+        category: 'software',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        rating: 4.8,
+        reviews: 420,
+        description: 'نظام تكاتة متقدم وموثوق موجود كثير'
+    },
+    {
+        id: 116,
+        name: 'All-in-One Bot',
+        price: 300,
+        priceType: 'k كردت',
+        category: 'software',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        rating: 4.9,
+        reviews: 650,
+        description: 'بوت شامل يحتوي على تكت وسيستم وغيف اوي وبرودكاست وأكثر'
+    },
+    {
+        id: 117,
+        name: 'Broadcast Bot',
+        price: 150,
+        priceType: 'k كردت',
+        category: 'software',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        rating: 4.7,
+        reviews: 380,
+        description: 'بوت برودكاست احترافي لإرسال الرسائل'
+    },
+    {
+        id: 118,
+        name: 'Auto Line Bot',
+        price: 150,
+        priceType: 'k كردت',
+        category: 'software',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        rating: 4.8,
+        reviews: 340,
+        description: 'بوت خط تلقائي ذكي وفعال'
+    },
+    {
+        id: 119,
+        name: 'Giveaway Bot',
+        price: 100,
+        priceType: 'k كردت',
+        category: 'software',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        rating: 4.7,
+        reviews: 510,
+        description: 'بوت غيفاوي قوي مع ميزات متقدمة'
+    },
+    {
+        id: 120,
+        name: 'Games Bot',
+        price: 100,
+        priceType: 'k كردت',
+        category: 'software',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        rating: 4.8,
+        reviews: 590,
+        description: 'بوت ألعاب متكامل (روليت، مافيا، أسرع وأكثر)'
+    }
+];
+
+// صورة افتراضية عند فشل التحميل
+const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop';
+
+let cart = [];
+let currentFilter = '';
+let currentSort = '';
+
+// تأكد من وجود حقول افتراضية لكل منتج حتى تعمل صفحة التفاصيل والسلة بشكل موثوق
+function normalizeProducts() {
+    products.forEach(p => {
+        if (!p.hasOwnProperty('description') || !p.description) p.description = 'لا يوجد وصف متاح لهذا المنتج.';
+        if (!p.hasOwnProperty('rating') || typeof p.rating !== 'number') p.rating = 0;
+        if (!p.hasOwnProperty('reviews') || typeof p.reviews !== 'number') p.reviews = 0;
+        if (!p.hasOwnProperty('priceType') || !p.priceType) p.priceType = 'ريال';
+        if (!p.hasOwnProperty('image') || !p.image || !p.image.toString().trim()) p.image = DEFAULT_IMAGE;
+    });
+}
+
+// تشغيل التطبيع فورًا
+normalizeProducts();
+
+// عرض المنتجات
+function displayProducts(productsToShow = products) {
+    const grid = document.getElementById('productsGrid');
+    grid.innerHTML = '';
+
+    productsToShow.forEach(product => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+
+        const priceDisplay = product.priceType ? `${product.price} ${product.priceType}` : `${product.price} ر.س`;
+        const imgSrc = (product.image && product.image.toString().trim()) ? product.image : DEFAULT_IMAGE;
+
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.alt = product.name;
+        img.className = 'product-image';
+        img.onerror = function() { this.onerror = null; this.src = DEFAULT_IMAGE; };
+
+        const info = document.createElement('div');
+        info.className = 'product-info';
+
+        const h3 = document.createElement('h3');
+        h3.className = 'product-name';
+        h3.textContent = product.name;
+
+        const cat = document.createElement('p');
+        cat.className = 'product-category';
+        cat.textContent = getCategoryName(product.category);
+
+        const price = document.createElement('p');
+        price.className = 'product-price';
+        price.textContent = priceDisplay;
+
+        const rating = document.createElement('p');
+        rating.className = 'product-rating';
+        rating.textContent = `★ ${product.rating} (${product.reviews} تقييم)`;
+
+        const addBtn = document.createElement('button');
+        addBtn.className = 'add-btn';
+        addBtn.textContent = 'إضافة للسلة';
+        addBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            addToCart({
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                priceType: product.priceType || 'ريال',
+                image: imgSrc
+            });
+        });
+
+        info.appendChild(h3);
+        info.appendChild(cat);
+        info.appendChild(price);
+        info.appendChild(rating);
+        info.appendChild(addBtn);
+
+        card.appendChild(img);
+        card.appendChild(info);
+        grid.appendChild(card);
+
+        // افتح صفحة تفاصيل المنتج عند النقر على البطاقة (ما عدا الأزرار)
+        card.addEventListener('click', (e) => {
+            if (e.target.closest('button')) return;
+            window.location.href = `product.html?id=${product.id}`;
+        });
+    });
+}
+
+// إدارة وصول الأدمن من الصفحة الرئيسية
+document.addEventListener('DOMContentLoaded', () => {
+    const adminBtn = document.getElementById('adminBtn');
+    const adminLogin = document.getElementById('adminLogin');
+    const adminSubmit = document.getElementById('adminSubmit');
+    const adminPassInput = document.getElementById('adminPassInput');
+
+    if (adminBtn) {
+        adminBtn.addEventListener('click', () => {
+            if (adminLogin.style.display === 'none' || adminLogin.style.display === '') {
+                adminLogin.style.display = 'inline-flex';
+                adminPassInput.focus();
+            } else {
+                adminLogin.style.display = 'none';
+            }
+        });
+    }
+
+    if (adminSubmit) {
+        adminSubmit.addEventListener('click', () => {
+            const pwd = adminPassInput.value || '';
+            if (pwd === 'TXbest') {
+                window.location.href = 'admin.html';
+            } else {
+                alert('كلمة المرور غير صحيحة');
+            }
+        });
+    }
+});
+
+// الحصول على اسم الفئة
+function getCategoryName(category) {
+    const categories = {
+        'discord': 'خدمات الديسكورد',
+        'servers': 'خدمات السيرفرات',
+        'personal': 'خدمات شخصية',
+        'software': 'خدمات البرمجيات'
+    };
+    return categories[category] || category;
+}
+
+// تصفية المنتجات حسب الفئة
+function filterProducts(category) {
+    currentFilter = category;
+    currentSort = '';
+    document.getElementById('sortSelect').value = '';
+    
+    const filtered = category ? products.filter(p => p.category === category) : products;
+    displayProducts(filtered);
+}
+
+// إعادة تعيين التصفية
+function resetFilters() {
+    currentFilter = '';
+    currentSort = '';
+    document.getElementById('sortSelect').value = '';
+    displayProducts(products);
+}
+
+// ترتيب المنتجات
+function sortProducts() {
+    const sortValue = document.getElementById('sortSelect').value;
+    currentSort = sortValue;
+    
+    let sortedProducts = [...products];
+    
+    if (currentFilter) {
+        sortedProducts = sortedProducts.filter(p => p.category === currentFilter);
+    }
+
+    switch(sortValue) {
+        case 'price-low':
+            sortedProducts.sort((a, b) => a.price - b.price);
+            break;
+        case 'price-high':
+            sortedProducts.sort((a, b) => b.price - a.price);
+            break;
+        case 'newest':
+            sortedProducts.sort((a, b) => b.id - a.id);
+            break;
+        case 'popular':
+            sortedProducts.sort((a, b) => b.rating - a.rating);
+            break;
+    }
+
+    displayProducts(sortedProducts);
+}
+
+// إضافة المنتج للسلة
+function addToCart(product) {
+    // تأكد من وجود صورة صالحة
+    product.image = (product.image && product.image.toString().trim()) ? product.image : DEFAULT_IMAGE;
+
+    const existingItem = cart.find(item => item.id === product.id);
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({ ...product, quantity: 1 });
+    }
+    
+    updateCart();
+    
+    // عرض رسالة التأكيد
+    showNotification(`تم إضافة ${product.name} للسلة!`);
+}
+
+// تحديث السلة
+function updateCart() {
+    updateCartCount();
+    updateCartDisplay();
+    saveCart();
+}
+
+// تحديث عدد المنتجات في السلة
+function updateCartCount() {
+    const count = cart.reduce((total, item) => total + item.quantity, 0);
+    const cartCountEl = document.getElementById('cartCount');
+    if (cartCountEl) cartCountEl.textContent = count;
+}
+
+// عرض المنتجات في السلة
+function updateCartDisplay() {
+    const cartItemsDiv = document.getElementById('cartItems');
+    if (!cartItemsDiv) return; // الصفحة الحالية لا تعرض لوحة السلة
+    cartItemsDiv.innerHTML = '';
+
+    if (cart.length === 0) {
+        cartItemsDiv.innerHTML = '<p style="text-align: center; padding: 2rem; color: #999;">السلة فارغة</p>';
+        return;
+    }
+
+    cart.forEach(item => {
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        const cartImg = (item.image && item.image.toString().trim()) ? item.image : DEFAULT_IMAGE;
+        itemDiv.innerHTML = `
+            <img src="${cartImg}" onerror="this.onerror=null;this.src='${DEFAULT_IMAGE}';" alt="${item.name}" class="cart-item-image">
+            <div class="cart-item-info">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-price">${item.price} ${item.priceType || 'ريال'}</div>
+                <div class="cart-item-quantity">
+                    <button onclick="decreaseQuantity(${item.id})">-</button>
+                    <span>${item.quantity}</span>
+                    <button onclick="increaseQuantity(${item.id})">+</button>
+                </div>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                <i class="fas fa-trash"></i>
+            </button>
+        `;
+        cartItemsDiv.appendChild(itemDiv);
+    });
+
+    updateCartTotal();
+}
+
+// زيادة الكمية
+function increaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity += 1;
+        updateCart();
+    }
+}
+
+// تقليل الكمية
+function decreaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        if (item.quantity > 1) {
+            item.quantity -= 1;
+        } else {
+            removeFromCart(productId);
+        }
+        updateCart();
+    }
+}
+
+// إزالة المنتج من السلة
+function removeFromCart(productId) {
+    cart = cart.filter(item => item.id !== productId);
+    updateCart();
+    showNotification('تم حذف المنتج من السلة');
+}
+
+// تحديث الإجمالي
+function updateCartTotal() {
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const cartTotalEl = document.getElementById('cartTotal');
+    if (cartTotalEl) cartTotalEl.textContent = total + ' ر.س';
+}
+
+// تبديل عرض السلة
+function toggleCart() {
+    const sidebar = document.getElementById('cartSidebar');
+    sidebar.classList.toggle('active');
+}
+
+// الذهاب للدفع
+function goToCheckout() {
+    if (cart.length === 0) {
+        showNotification('السلة فارغة!', 'error');
+        return;
+    }
+
+    const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const orderSummary = cart.map(item => `${item.name} × ${item.quantity}`).join('\n');
+    
+    alert(`طلبك:\n${orderSummary}\n\nالإجمالي: ${total} ر.س\n\nشكراً لاختيارك TXstore!`);
+    
+    // حفظ الطلب مؤقتًا في localStorage لعرضه في صفحة التقييم
+    const pending = {
+        orderSummary,
+        total,
+        timestamp: Date.now()
+    };
+    localStorage.setItem('pendingOrder', JSON.stringify(pending));
+
+    // تفريغ السلة وتحديث التخزين المحلي ثم الانتقال لصفحة التقييم
+    cart = [];
+    updateCart();
+    toggleCart();
+
+    window.location.href = 'rating.html';
+}
+
+// إرسال نموذج الاتصال
+function submitForm(event) {
+    event.preventDefault();
+    showNotification('شكراً! تم استقبال رسالتك بنجاح', 'success');
+    event.target.reset();
+}
+
+// عرض الإشعارات
+function showNotification(message, type = 'success') {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: ${type === 'success' ? '#2ECC71' : '#E74C3C'};
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 8px;
+        z-index: 1000;
+        animation: slideIn 0.3s ease;
+    `;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => notification.remove(), 300);
+    }, 3000);
+}
+
+// حفظ السلة في التخزين المحلي
+function saveCart() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+}
+
+// استعادة السلة من التخزين المحلي
+function loadCart() {
+    const savedCart = localStorage.getItem('cart');
+    if (savedCart) {
+        cart = JSON.parse(savedCart);
+        updateCart();
+    }
+}
+
+// إضافة أنماط الحركة
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes slideIn {
+        from {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        to {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        to {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// تحميل البيانات عند تحميل الصفحة
+document.addEventListener('DOMContentLoaded', () => {
+    displayProducts();
+    loadCart();
+
+    // إغلاق السلة عند النقر خارجها
+    document.addEventListener('click', (e) => {
+        const sidebar = document.getElementById('cartSidebar');
+        const cartBtn = document.querySelector('.cart-btn');
+        
+        if (!sidebar.contains(e.target) && !cartBtn.contains(e.target) && sidebar.classList.contains('active')) {
+            // لا تغلق إذا كان النقر على الزر
+        }
+    });
+
+    // تنعيم الانتقال للأقسام
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+        });
+    });
+});
+
+// وظيفة البحث
+function searchProducts() {
+    const searchTerm = document.querySelector('.search-btn').parentElement.querySelector('input')?.value || '';
+    if (searchTerm.trim()) {
+        const results = products.filter(p => 
+            p.name.includes(searchTerm) || p.description.includes(searchTerm)
+        );
+        displayProducts(results);
+    }
+}
+
+// دالة مساعدة للحصول على حالة الطقس (اختيارية للمتجر)
+function getWeatherGreeting() {
+    const hours = new Date().getHours();
+    if (hours < 12) {
+        return 'صباح الخير!';
+    } else if (hours < 18) {
+        return 'مساء الخير!';
+    } else {
+        return 'مساء السعادة!';
+    }
+}
+
+console.log('%cمرحباً في TXstore', 'color: #FF6B6B; font-size: 20px; font-weight: bold');
+console.log('%cنسعد برؤيتك معنا!', 'color: #4A90E2; font-size: 14px');
