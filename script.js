@@ -175,7 +175,7 @@ const products = [
         price: 150,
         priceType: 'k كردت',
         category: 'software',
-        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=69664d39&is=6964fbb9&hm=0f26ff58211e180def8528df494e1d661dc3993aec51560e0bed9b387a1b17ec&',
         rating: 4.8,
         reviews: 420,
         description: 'نظام تكاتة متقدم وموثوق موجود كثير'
@@ -186,7 +186,7 @@ const products = [
         price: 300,
         priceType: 'k كردت',
         category: 'software',
-        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=69664d39&is=6964fbb9&hm=0f26ff58211e180def8528df494e1d661dc3993aec51560e0bed9b387a1b17ec&',
         rating: 4.9,
         reviews: 650,
         description: 'بوت شامل يحتوي على تكت وسيستم وغيف اوي وبرودكاست وأكثر'
@@ -197,7 +197,7 @@ const products = [
         price: 150,
         priceType: 'k كردت',
         category: 'software',
-        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=69664d39&is=6964fbb9&hm=0f26ff58211e180def8528df494e1d661dc3993aec51560e0bed9b387a1b17ec&',
         rating: 4.7,
         reviews: 380,
         description: 'بوت برودكاست احترافي لإرسال الرسائل'
@@ -208,7 +208,7 @@ const products = [
         price: 150,
         priceType: 'k كردت',
         category: 'software',
-        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=69664d39&is=6964fbb9&hm=0f26ff58211e180def8528df494e1d661dc3993aec51560e0bed9b387a1b17ec&',
         rating: 4.8,
         reviews: 340,
         description: 'بوت خط تلقائي ذكي وفعال'
@@ -219,7 +219,7 @@ const products = [
         price: 100,
         priceType: 'k كردت',
         category: 'software',
-        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=69664d39&is=6964fbb9&hm=0f26ff58211e180def8528df494e1d661dc3993aec51560e0bed9b387a1b17ec&',
         rating: 4.7,
         reviews: 510,
         description: 'بوت غيفاوي قوي مع ميزات متقدمة'
@@ -230,7 +230,7 @@ const products = [
         price: 100,
         priceType: 'k كردت',
         category: 'software',
-        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=6963aa39&is=696258b9&hm=2853975c2c4221de6f86d07b0693c6569392f6b4a01ca56e8f02a5bf8f14c3d8&',
+        image: 'https://cdn.discordapp.com/attachments/1396377051052769313/1459544483321479463/download.png?ex=69664d39&is=6964fbb9&hm=0f26ff58211e180def8528df494e1d661dc3993aec51560e0bed9b387a1b17ec&',
         rating: 4.8,
         reviews: 590,
         description: 'بوت ألعاب متكامل (روليت، مافيا، أسرع وأكثر)'
@@ -680,3 +680,4 @@ function getWeatherGreeting() {
 
 console.log('%cمرحباً في TXstore', 'color: #FF6B6B; font-size: 20px; font-weight: bold');
 console.log('%cنسعد برؤيتك معنا!', 'color: #4A90E2; font-size: 14px');
+
